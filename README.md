@@ -6,6 +6,7 @@ The config server for spring projects (here, used for teletomo project). This is
 
 [Documentation for keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/keytool.html)
 
+**NOTE:** This is shared as public just for the sake of example, and should not be available to the public otherwise.
 Example:
 ```
 keytool -genkeypair -alias apiEncKey -keyalg RSA -dname "CN=Baymax15,OU=example,O=example.org,C=IN" -keypass 7313Phon3 -keystore apiEncKey.jks -storepass 7313Phon3
@@ -16,16 +17,16 @@ keytool -importkeystore -srckeystore apiEncKey.jks -destkeystore apiEncKey.jks -
 ```
 
 ## Required environment variables
-| Envs     | Description                             | Example           |
-| -------- | --------------------------------------- | ----------------- |
-|`GIT_URI` | uri to the git repository               | teleconfigrepo.git|
-|`KS_LOC`  | location of the keystore file generated | apiEncKey.jks     |
-|`KS_PASS` | password of the keystore                | 7313Phon3         |
-|`KS_ALIAS`|alias given to the keystore              | apiEncKey         |
+| Envs      | Description                             | Example       |
+| --------- | --------------------------------------- | ------------- |
+|`GIT_URI`  | uri to the git repository               | [teleconfigrepo.git](https://github.com/Baymax15/teleconfigrepo) |
+|`KS_LOC`   | location of the keystore file generated | apiEncKey.jks |
+|`KS_PASS`  | password of the keystore                | 7313Phon3     |
+|`KS_ALIAS` |alias given to the keystore              | apiEncKey     |
 
 ### Optional variables
 | Envs   | Description                     | Default |
-|--------| --------------------------------| ------- |
+| ------ | ------------------------------- | ------- |
 | `PORT` | port on which the server is run | 8888    |
 
-These are provided as property values in [application.properties](src\main\resources\application.properties)
+These are provided as property values in [application.properties](src/main/resources/application.properties)
